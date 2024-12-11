@@ -1,3 +1,5 @@
+package util;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -10,39 +12,22 @@ public class HandsOnArrayList {
 //            3. Print the list of names.
 //4. Remove a name and print the updated list.
 //            5. Sort the list alphabetically and print the sorted list.
-ArrayList<String> students = new ArrayList<>();
+private ArrayList<String> students = new ArrayList<>();
 
-    public void addStudent(String student){
-        try{
-            students.add(student);
-            System.out.println("Added student: " + student);
-        }catch(Exception e){
-            System.out.println("Error: " + e.getMessage());
-        }
-    }
+  public void arrayOfStudents(){
+      students.add("Jane");
+      students.add("John");
+      students.add("Missy");
+      students.add("Luis");
+      students.add("Ray");
+      System.out.println("List of students: " + students);
 
-    public void displayStudent(){
-        System.out.println("List of employees: ");
-        try{
-            for(String student : students){
-                System.out.println(student);
-            }
-        }catch(Exception e){
-            System.out.println("Error: " + e.getMessage());
-        }
-    }
+      students.remove("Ray");
+      System.out.println("List of students after remove: " + students);
 
-    public void removeStudent(String student){
-        try{
-            students.remove(student);
-            System.out.println("Removed student: " + student);
-        }catch(Exception e){
-            System.out.println("Error: " + e.getMessage());
-        }
-    }
+      System.out.println("Students before sort: ");
+      Collections.sort(students);
+      System.out.println("List of students: " + students);
+  }
 
-    public void sortStudent(){
-        Collections.sort(students);
-        System.out.println("Sorted students: " + students);
-    }
 }
